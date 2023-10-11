@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Model } from './model';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,13 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 })
 export class AppComponent{
   title = 'todoApp';
-  user = 'goktug';
 
-  itemss:any =  [
-    { desc: "kahvaltı", action: "no"},
-    { desc: "spor", action: "no" },
-    { desc: "yemek", action: "no" }
-  ];
-  
+  model = new Model();
+  getName(){
+    return this.model.user;
+  }
+  getItems(){
+    return this.model.itemss
+  }
+
 }

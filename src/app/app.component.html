@@ -5,7 +5,7 @@
 
 
         <h3 class="bg-primary text-white p-3">
-          [{{user}}] to do list
+          [{{getName()}}] to do list
         </h3>
       
         <div class="input-grup">
@@ -19,14 +19,23 @@
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
+              <th>Num</th>
               <th>Desc</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-           <tr *ngFor="let item of itemss">
-            <td>{{item.desc}}</td>
-            <td>{{item.action}}</td>
+           <tr *ngFor="let item of getItems(); let i=index">
+              <th>{{i+1}}</th>
+              <th>{{item.desc}}</th>
+              <th [ngSwitch]="item.action">
+                <span *ngSwitchCase="true">
+                  evet
+                </span>
+                <span *ngSwitchCase="false">
+                  hyr
+                </span>
+              </th>
            </tr>
           </tbody>
         </table>
