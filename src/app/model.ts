@@ -20,6 +20,6 @@ export class ToDoItem{
     constructor(descc:any,actionn:any){
         
         this.desc=descc;
-        this.action=actionn
+        this.action=actionn;
     }
 }
